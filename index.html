@@ -11,7 +11,15 @@
 
 <tw-story></tw-story>
 
-<tw-storydata name="Dada" startnode="1" creator="Twine" creator-version="2.2.1" ifid="F2404FC5-2FA3-4442-B9D2-6E3A6A21A5AE" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">tw-hook[style*="color:"] tw-link, tw-hook[style*="color:"] .enchantment-link {
+<tw-storydata name="Dada" startnode="12" creator="Twine" creator-version="2.2.1" ifid="F2404FC5-2FA3-4442-B9D2-6E3A6A21A5AE" zoom="1" format="Harlowe" format-version="2.1.0" options="" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.enchantment-link, tw-link {
+	color: #888;
+}
+
+.enchantment-link:hover, tw-link:hover {
+	color: #222;
+}
+
+tw-hook[style*="color:"] tw-link, tw-hook[style*="color:"] .enchantment-link {
 	color: inherit;
   	font-weight: inherit;
 }
@@ -38,7 +46,7 @@ tw-sidebar {
 // sugar.js; howler for harlowe, by chapel
 // v1.0.1
 window.A=window.A||{t:{},m:window.Howler,create:function(r,e){if(!r||!e)return void console.log("Audio error in A.create() -> no id or source");if(Array.isArray(e))e=e;else if("string"==typeof e&&2===arguments.length)e=[e];else{if(!("string"==typeof e&&arguments.length>2))return void console.log("Audio error in A.create() -> sources could not be processed");var o=[].slice.call(arguments);r=o.shift(),e=function(r){var e=[];return r.forEach(function(r){"string"==typeof r&&e.push(r)}),e}(o)}window.A.t[r]=new Howl({src:e})}};
-</script><tw-passagedata pid="1" name="Primal" tags="" position="400,227" size="100,100">{
+</script><tw-passagedata pid="1" name="Primal" tags="" position="408,228" size="100,100">{
 &lt;script&gt;
 A.create(&#39;track1&#39;, [
 	&#39;media/audio/flow_end.ogg&#39;
@@ -49,16 +57,11 @@ A.create(&#39;track2&#39;, [
 A.create(&#39;track3&#39;, [
 	&#39;media/audio/flow_end.ogg&#39;
 ]);
-
-// One-liner to resume playback when user interacted with the page.
-document
-.querySelector(&#39;button&#39;)
-.addEventListener(&#39;click&#39;, function() { context.resume(); });
+A.t[&#39;track1&#39;].loop(true).play();
 &lt;/script&gt;
 }
 &lt;==&gt;
 (live: 1s)[{
-	&lt;script&gt;A.t[&#39;track1&#39;].loop(true).play();&lt;/script&gt;
 	(stop:)(transition: &quot;dissolve&quot;)[As the river flows]
 }]
 (live: 2s)[(stop:)(transition: &quot;dissolve&quot;)[The sounds wave]]
@@ -115,7 +118,7 @@ But you may [[try]]
 }</tw-passagedata><tw-passagedata pid="10" name="end" tags="whitebackground" position="700,850" size="100,100">To reach is to end.
 (live: 3s)[(stop:)(transition: &quot;dissolve&quot;)[And to end is **[[not]]**.]]
 &lt;script&gt;A.t[&#39;track2&#39;].fade(1.0, 0.0, 5000);&lt;/script&gt;
-(live: 2s)[(stop:)&lt;script&gt;A.t[&#39;track3&#39;].play();&lt;/script&gt;]</tw-passagedata><tw-passagedata pid="11" name="not" tags="" position="700,1000" size="100,100">&lt;span id=&quot;echo&quot;&gt;*Syne we cella.*&lt;/span&gt;</tw-passagedata></tw-storydata>
+(live: 2s)[(stop:)&lt;script&gt;A.t[&#39;track3&#39;].play();&lt;/script&gt;]</tw-passagedata><tw-passagedata pid="11" name="not" tags="" position="700,1000" size="100,100">&lt;span id=&quot;echo&quot;&gt;*Syne we cella.*&lt;/span&gt;</tw-passagedata><tw-passagedata pid="12" name="Dada" tags="" position="407,64" size="100,100">(color: &quot;#ccc&quot;)[(text-style: &quot;shadow&quot;)[### [[*Dada*|Primal]] ]]</tw-passagedata><tw-passagedata pid="13" name="#Dada|" tags="" position="301,358" size="100,100">Double-click this passage to edit it.</tw-passagedata></tw-storydata>
 
 <script title="Twine engine code" data-main="harlowe">"use strict";function _defineProperty(e,t,n){return t in e?Object.defineProperty(e,t,{value:n,enumerable:!0,configurable:!0,writable:!0}):e[t]=n,e}function _toConsumableArray(e){if(Array.isArray(e)){for(var t=0,n=Array(e.length);t<e.length;t++)n[t]=e[t];return n}return Array.from(e)}var _slicedToArray=function(){function e(e,t){var n=[],r=!0,i=!1,o=void 0;try{for(var a,s=e[Symbol.iterator]();!(r=(a=s.next()).done)&&(n.push(a.value),!t||n.length!==t);r=!0);}catch(e){i=!0,o=e}finally{try{!r&&s.return&&s.return()}finally{if(i)throw o}}return n}return function(t,n){if(Array.isArray(t))return t;if(Symbol.iterator in Object(t))return e(t,n);throw new TypeError("Invalid attempt to destructure non-iterable instance")}}(),_typeof="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e};!function(){/**
  * @license almond 0.3.3 Copyright jQuery Foundation and other contributors.
