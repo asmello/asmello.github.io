@@ -41,7 +41,7 @@ window.A=window.A||{t:{},m:window.Howler,create:function(r,e){if(!r||!e)return v
 </script><tw-passagedata pid="1" name="Primal" tags="" position="400,227" size="100,100">{
 &lt;script&gt;
 A.create(&#39;track1&#39;, [
-	&#39;media/audio/flow_start.ogg&#39;
+	&#39;media/audio/flow_end.ogg&#39;
 ]);
 A.create(&#39;track2&#39;, [
 	&#39;media/audio/flow_middle.ogg&#39;
@@ -49,6 +49,11 @@ A.create(&#39;track2&#39;, [
 A.create(&#39;track3&#39;, [
 	&#39;media/audio/flow_end.ogg&#39;
 ]);
+
+// One-liner to resume playback when user interacted with the page.
+document
+.querySelector(&#39;button&#39;)
+.addEventListener(&#39;click&#39;, function() { context.resume(); });
 &lt;/script&gt;
 }
 &lt;==&gt;
